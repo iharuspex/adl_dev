@@ -1,0 +1,24 @@
+name = "adl_dev"
+description = "Examples and dev environment for ADL"
+long-description = "My project to play and debug with some MCUs/Boards/Drivers/etc with Ada Drivers Library"
+version = "0.1.0-dev"
+
+authors = ["Artem Paraev"]
+maintainers = ["Artem Paraev <artemparaev.dev@gmail.com>"]
+maintainers-logins = ["iharuspex"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = ["embedded", "nostd", "microbit", "nrf51"]
+
+executables = ["app_microbit_v1.elf"]
+project-files = [
+    "apps/app_microbit_v1/app_microbit_v1.gpr"
+]
+
+[[depends-on]]
+gnat_arm_elf = "^14.2.1"
+
+[[actions]]
+type = "post-build"
+command = ["scripts/flash_microbit.sh"]
+

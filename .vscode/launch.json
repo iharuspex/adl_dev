@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "MicroBit v1 pyOCD Debug",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/bin/adl_dev.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "Main",
+            "servertype": "pyocd",
+            "toolchainPrefix": "arm-eabi",
+            "serverpath": "/home/haruspex/.local/bin/pyocd",
+            "postLaunchCommands": [
+                "monitor arm semihosting enable",
+            ],
+            // "serverArgs": ["--semihosting"],
+            "armToolchainPath": "/home/haruspex/.local/share/alire/toolchains/gnat_arm_elf_11.2.4_ba16d45c/bin/",
+            "gdbPath": "/home/haruspex/.local/share/alire/toolchains/gnat_arm_elf_11.2.4_ba16d45c/bin/arm-eabi-gdb",
+            "targetId": "nrf51822"
+        },
+    ]
+}
